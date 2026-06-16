@@ -1,0 +1,22 @@
+# Local dotenv/direnv
+.env
+.envrc
+
+# Editor and OS
+*~
+.*.swp
+.DS_Store
+/.idea
+/.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node artifacts
+/node_modules
+dist/
+*.tgz
+/.eslintcache

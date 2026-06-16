@@ -1,0 +1,47 @@
+{
+  "name": "@sixfold/iso-container-validation",
+  "version": "1.0.0",
+  "description": "ISO 6346 ocean container number validation",
+  "type": "module",
+  "main": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "repository": "git@github.com:6fold/iso-container-validation.git",
+  "author": "Sixfold Engineering <engineering@sixfold.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "!dist/**/__tests__"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint ./src && prettier ./src --check",
+    "lint:fix": "eslint ./src --fix && prettier ./src --write",
+    "test": "yarn lint && vitest",
+    "release": "rimraf dist && yarn lint && yarn build && yarn test && standard-version",
+    "publish-release": "git push --follow-tags origin master && yarn authenticate && npm publish",
+    "authenticate": "npx google-artifactregistry-auth"
+  },
+  "devDependencies": {
+    "@sixfold/editor-config": "^4.3.0",
+    "@sixfold/eslint-plugin": "^4.0.0",
+    "@sixfold/ts-config": "^5.1.2",
+    "@swc/core": "^1.15.32",
+    "@types/node": "^24",
+    "@vitest/eslint-plugin": "^1.6.16",
+    "eslint": "^9.39.2",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.3",
+    "rimraf": "^6.1.3",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.8.3",
+    "unplugin-swc": "^1.5.9",
+    "vitest": "^4.1.5"
+  },
+  "prettier": "@sixfold/editor-config/prettier"
+}

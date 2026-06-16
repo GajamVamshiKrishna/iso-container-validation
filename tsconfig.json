@@ -1,0 +1,13 @@
+{
+  "extends": "./node_modules/@sixfold/ts-config/tsconfig-service.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "lib": ["es2023"],
+    "outDir": "dist/esm",
+    "sourceMap": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
+  },
+  "include": ["src/**/*.ts"]
+}
